@@ -1,13 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  Github,
-  Linkedin,
-  ExternalLink,
-  Mail,
-  ArrowRight,
-  Moon,
-  Sun,
-} from "lucide-react";
+import { ExternalLink, Mail, ArrowRight, Moon, Sun } from "lucide-react";
 import perfil from "../assets/perfil.jpg";
 import "../styles/global.css";
 
