@@ -1,0 +1,402 @@
+:root {
+  --bg-color: #fdfaf3;
+  --card-bg: #ffffff;
+  --primary: #1a2e35;
+  --accent: #c5a36b;
+  --text-main: #333333;
+  --text-light: #555555;
+  --border-color: #e0d5ba;
+  --input-bg: #f9f6ee;
+  --transition: all 0.3s ease;
+}
+
+/* . Variáveis para Modo Escuro */
+body.dark-mode {
+  --bg-color: #121212;
+  --card-bg: #1e1e1e;
+  --primary: #ffffff;
+  --accent: #d4b483;
+  --text-main: #e0e0e0;
+  --text-light: #b0b0b0;
+
+  --input-bg: #1a1a1a;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  border: none;
+  color: var(--text-main);
+  line-height: 1.6;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  border: none !important;
+}
+
+/* 3. Header & Navigation */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.logo-badge {
+  background: var(--accent);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.theme-toggle {
+  background: none;
+
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--accent);
+}
+
+/* 4. Hero Section (Ajustado para o design da imagem) */
+.hero-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 0;
+  gap: 50px;
+  width: 100%;
+}
+
+.hero-content {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.hero-text {
+  flex: 1.2;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  margin: 20px 0;
+}
+
+.gold-text {
+  color: var(--accent);
+}
+
+.badge {
+  color: var(--accent);
+
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.btn-filled {
+  background: #1a2e35;
+  color: #fdfaf3;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.image-ring {
+  width: 400px;
+  height: 400px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  padding: 15px;
+}
+
+.image-ring img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* 5. Seção Sobre Mim (Jornada) */
+.section-padding {
+  padding: 100px 0;
+}
+
+.jornada-list {
+  list-style: none;
+  padding: 0;
+}
+
+.jornada-list li {
+  margin-bottom: 15px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.jornada-list li::before {
+  content: "•";
+  color: var(--accent);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* Espaçamento das Seções */
+.section-padding {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+/* 6. Grid de Projetos */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(197, 163, 107, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(197, 163, 107, 0.1);
+  border-color: var(--accent);
+}
+
+.tag {
+  background: #f9f6ee;
+  color: var(--accent);
+  padding: 6px 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.7rem;
+}
+
+/* 7. Formulário de Contato */
+.contact-form {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group input,
+.form-group textarea {
+  background: var(--input-bg);
+  border: 1px solid var(--border-color);
+  padding: 12px;
+  border-radius: 4px;
+  color: var(--text-main);
+}
+
+.contact-direct {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.btn-send {
+  background: var(--primary);
+  color: var(--bg-color);
+  padding: 18px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* 8. Footer */
+.footer {
+  text-align: center;
+  padding: 40px;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+/* Responsividade */
+/* --- Responsividade Mobile --- */
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 24px;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .image-ring {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar {
+    padding: 20px 0;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  /* Hero Section: Inverte a ordem para a foto aparecer primeiro ou depois do texto */
+  .hero-container {
+    flex-direction: column-reverse; /* Foto em cima, texto embaixo */
+    text-align: center;
+    padding: 60px 0;
+    gap: 40px;
+  }
+
+  .hero-content {
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+    line-height: 1.2;
+  }
+
+  .hero-description {
+    max-width: 100%;
+  }
+
+  .button-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-filled,
+  .btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Imagem */
+  .image-ring {
+    width: 280px;
+    height: 280px;
+    padding: 10px;
+  }
+
+  /* Grid de Projetos */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-card {
+    padding: 24px;
+  }
+
+  /* Formulário de Contato */
+  .contact-form {
+    padding: 30px 20px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .logo-text {
+    display: none;
+  }
+}
